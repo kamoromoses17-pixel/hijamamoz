@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HijamaMoz — informação sobre Hijamah, tradição islâmica, serviços e produtos educativos.">
+<title>HijamaMoz | Conhecimento, tradição e responsabilidade</title>
+<style>
+:root{
+  --green:#173d32;--green2:#245747;--gold:#c9b681;--cream:#f7f4ec;
+  --ink:#252923;--muted:#687069;--white:#fff;--line:#e5e0d5;
+  --shadow:0 12px 35px rgba(24,48,39,.10);--radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.container{width:min(1140px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--green);font-weight:800;letter-spacing:1.5px}
+.brand-mark{width:42px;height:42px;border-radius:12px;background:var(--green);color:#f5e9c9;display:grid;place-items:center;font-size:22px}
+.brand small{display:block;font-size:9px;letter-spacing:1.1px;color:var(--muted);font-weight:600}
+nav{display:flex;align-items:center;gap:24px}
+nav a{font-size:13px;font-weight:700;color:#37423b;letter-spacing:.35px}
+nav a:hover,nav a.active{color:#9b8144}
+.menu-btn{display:none;border:0;background:var(--green);color:#fff;border-radius:9px;padding:10px 13px;font-size:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:9px;background:var(--green);color:#fff;font-weight:700;font-size:13px;border:1px solid var(--green);transition:.2s}
+.btn:hover{background:var(--green2);transform:translateY(-1px)}
+.btn.outline{background:transparent;color:var(--green)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#1d3028}
+.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9a8044;font-weight:800}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(36px,5vw,61px);line-height:1.08;letter-spacing:-1.7px;margin:14px 0 20px}
+h2{font-size:clamp(27px,3vw,39px);line-height:1.2;color:var(--green);letter-spacing:-.7px;margin-bottom:14px}
+h3{font-size:19px;color:var(--green);margin-bottom:8px}
+.lead{font-size:18px;color:#e7e9e2;max-width:610px}
+.muted{color:var(--muted)}
+section.page{display:none;min-height:65vh}
+section.page.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:.3;transform:translateY(5px)}to{opacity:1;transform:none}}
+.hero{background:linear-gradient(110deg,rgba(13,47,37,.96),rgba(20,58,47,.80)),url('https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=1800&q=85') center/cover;color:#fff;padding:100px 0 92px}
+.hero .eyebrow{color:#dfc98e}
+.hero-inner{max-width:760px}
+.hero p{max-width:650px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero .btn.outline{border-color:#d9d2bd;color:#fff}
+.section{padding:76px 0}
+.section.cream{background:var(--cream)}
+.section-head{max-width:720px;margin-bottom:34px}
+.section-head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.card-img{height:205px;background:#e9e6dc}
+.card-body{padding:23px}
+.card-body p{color:var(--muted);font-size:14px;margin-bottom:0}
+.iconbox{width:46px;height:46px;border-radius:13px;background:#edf1eb;color:var(--green);display:grid;place-items:center;font-size:22px;margin-bottom:15px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.photo{height:420px;border-radius:var(--radius);overflow:hidden;background:#e8e5db;box-shadow:var(--shadow)}
+.photo img{object-position:center}
+.checklist{padding:0;list-style:none}
+.checklist li{padding:9px 0;border-bottom:1px solid var(--line);color:#465149}
+.checklist li:before{content:"✓";color:#9b8144;font-weight:800;margin-right:12px}
+.banner{background:var(--green);color:#fff;padding:42px;border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:25px}
+.banner h2{color:#fff;margin-bottom:8px}
+.banner p{margin:0;color:#e1e7df}
+.page-hero{background:var(--green);color:#fff;padding:58px 0}
+.page-hero h1{font-size:clamp(34px,4vw,48px);margin-bottom:10px}
+.page-hero p{color:#e2e8e1;margin:0;max-width:650px}
+.product .card-img{height:230px}
+.product .card-body{min-height:190px;display:flex;flex-direction:column;align-items:flex-start}
+.tag{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#917944;font-weight:800}
+.product .btn{margin-top:auto}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:35px}
+.contact-item{padding:17px 0;border-bottom:1px solid var(--line)}
+.contact-item strong{display:block;color:var(--green)}
+form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+label{display:block;font-size:12px;font-weight:700;margin:13px 0 6px;color:#465149}
+input,select,textarea{width:100%;padding:13px;border:1px solid #dcded7;border-radius:8px;font:inherit;font-size:14px;background:#fff}
+textarea{min-height:125px;resize:vertical}
+.notice{font-size:11px;color:var(--muted);margin-top:12px}
+footer{background:#102d25;color:#e8ece6;padding:48px 0 22px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}
+footer h3{color:#e5d4a7;font-size:14px}
+footer p,footer a{font-size:13px;color:#d1d9d1}
+.footer-links{display:grid;gap:8px}
+.copyright{border-top:1px solid rgba(255,255,255,.15);margin-top:35px;padding-top:18px;font-size:11px;color:#b7c3b9}
+.float-wa{position:fixed;right:20px;bottom:20px;z-index:40;background:#1f8f59;color:#fff;border-radius:30px;padding:13px 18px;font-size:13px;font-weight:800;box-shadow:var(--shadow)}
+.placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#e7e4d9,#f7f4ec);color:#647168;text-align:center;padding:25px;font-size:13px}
+@media(max-width:800px){
+ nav{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:20px 4%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:16px}
+ nav.open{display:flex}.menu-btn{display:block}
+ .grid{grid-template-columns:1fr 1fr}.split,.contact-grid{grid-template-columns:1fr;gap:28px}
+ .photo{height:300px}.footer-grid{grid-template-columns:1fr 1fr}
+ .banner{align-items:flex-start;flex-direction:column;padding:30px}
+}
+@media(max-width:520px){
+ .grid,.grid.two{grid-template-columns:1fr}
+ .hero{padding:75px 0}.section{padding:55px 0}
+ .card-img{height:190px}.footer-grid{grid-template-columns:1fr}
+ .float-wa{right:12px;bottom:12px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="container nav">
+  <a class="brand" href="#home" onclick="showPage('home')">
+   <span class="brand-mark">۞</span><span>HIJAMAMOZ<small>HIJAMAH · CONHECIMENTO · TRADIÇÃO</small></span>
+  </a>
+  <button class="menu-btn" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+  <nav id="mainNav">
+   <a href="#home" data-page="home" onclick="showPage('home')">HOME</a>
+   <a href="#sobre" data-page="sobre" onclick="showPage('sobre')">SOBRE NÓS</a>
+   <a href="#servicos" data-page="servicos" onclick="showPage('servicos')">SERVIÇOS</a>
+   <a href="#loja" data-page="loja" onclick="showPage('loja')">COMPRAR ONLINE</a>
+   <a href="#contactos" data-page="contactos" onclick="showPage('contactos')">CONTACTOS</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="page active" id="home">
+ <div class="hero"><div class="container hero-inner">
+  <div class="eyebrow">Maputo · Moçambique</div>
+  <h1>Conhecimento, tradição e responsabilidade.</h1>
+  <p class="lead">Conheça a Hijamah, a sua história na tradição islâmica e os cuidados necessários para uma prática responsável.</p>
+  <div class="hero-actions">
+   <a class="btn gold" href="#servicos" onclick="showPage('servicos')">CONHEÇA OS SERVIÇOS</a>
+   <a class="btn outline" href="#sobre" onclick="showPage('sobre')">SOBRE O HIJAMAMOZ</a>
+  </div>
+ </div></div>
+ <div class="section"><div class="container split">
+  <div><div class="eyebrow">Bem-vindo ao HijamaMoz</div><h2>Um espaço dedicado à informação e à prática responsável.</h2>
+   <p class="muted">O HijamaMoz é um projecto dedicado à divulgação de conhecimentos sobre a Hijamah e à disponibilização de serviços, equipamentos e materiais educativos relacionados.</p>
+   <p class="muted">Procuramos comunicar com clareza, respeitar os valores islâmicos e dar prioridade à higiene, à segurança e à dignidade de cada pessoa.</p>
+   <a class="btn" href="#sobre" onclick="showPage('sobre')">SAIBA MAIS</a>
+  </div>
+  <div class="photo"><img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=1000&q=85" alt="Ambiente de bem-estar e atendimento"></div>
+ </div></div>
+ <div class="section cream"><div class="container">
+  <div class="section-head"><div class="eyebrow">O que encontra aqui</div><h2>Conheça as nossas áreas</h2><p>Informação organizada para que encontre facilmente o que procura.</p></div>
+  <div class="grid">
+   <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Equipamentos de ventosaterapia"></div><div class="card-body"><h3>Hijamah</h3><p>Informação sobre a prática, os seus contextos tradicionais e os cuidados de segurança.</p></div></article>
+   <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=800&q=80" alt="Materiais e equipamentos"></div><div class="card-body"><h3>Equipamentos</h3><p>Conheça os kits e materiais disponibilizados pelo HijamaMoz.</p></div></article>
+   <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=800&q=80" alt="Livros educativos"></div><div class="card-body"><h3>Livros e educação</h3><p>Materiais de aprendizagem e recursos educativos islâmicos.</p></div></article>
+  </div>
+ </div></div>
+ <div class="section"><div class="container"><div class="banner"><div><h2>Precisa de mais informações?</h2><p>Entre em contacto connosco. Teremos todo o gosto em esclarecer as suas dúvidas.</p></div><a class="btn gold" href="#contactos" onclick="showPage('contactos')">CONTACTAR</a></div></div></div>
+</section>
+
+<section class="page" id="sobre">
+ <div class="page-hero"><div class="container"><div class="eyebrow">HijamaMoz</div><h1>Sobre nós</h1><p>Conheça a nossa história, missão e os princípios que orientam o nosso trabalho.</p></div></div>
+ <div class="section"><div class="container split">
+  <div><div class="eyebrow">A nossa história</div><h2>Conhecimento partilhado com responsabilidade.</h2>
+   <p class="muted">O HijamaMoz nasceu da vontade de divulgar conhecimentos sobre a Hijamah e promover uma abordagem responsável, assente na informação, na higiene e no respeito pelos valores islâmicos.</p>
+   <p class="muted">O nosso compromisso é apresentar informação clara, distinguir os ensinamentos religiosos da evidência científica e tratar cada pessoa com dignidade.</p>
+  </div>
+  <div class="photo"><img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=1000&q=85" alt="Espaço de atendimento"></div>
+ </div></div>
+ <div class="section cream"><div class="container">
+  <div class="section-head"><div class="eyebrow">O nosso compromisso</div><h2>Missão e valores</h2></div>
+  <div class="grid">
+   <div class="card"><div class="card-body"><div class="iconbox">◎</div><h3>Amanah</h3><p>Agir com confiança, honestidade e responsabilidade.</p></div></div>
+   <div class="card"><div class="card-body"><div class="iconbox">✦</div><h3>Ihsan</h3><p>Procurar qualidade e cuidado em tudo o que fazemos.</p></div></div>
+   <div class="card"><div class="card-body"><div class="iconbox">♡</div><h3>Rahmah</h3><p>Tratar todas as pessoas com respeito, consideração e dignidade.</p></div></div>
+  </div>
+ </div></div>
+ <div class="section"><div class="container split">
+  <div class="photo"><div class="placeholder">INSERIR FOTOGRAFIA PROFISSIONAL DO RESPONSÁVEL PELO PROJECTO</div></div>
+  <div><div class="eyebrow">Quem está por detrás do projecto</div><h2>A nossa equipa</h2>
+   <p class="muted">Apresente aqui o responsável pelo HijamaMoz, a sua formação, experiência e qualificações relevantes. Inclua apenas credenciais que possam ser comprovadas.</p>
+   <p class="muted">Se existir uma equipa, apresente os seus membros e as respectivas funções, respeitando a privacidade de cada pessoa.</p>
+  </div>
+ </div></div>
+</section>
+
+<section class="page" id="servicos">
+ <div class="page-hero"><div class="container"><div class="eyebrow">O que fazemos</div><h1>Serviços e informação</h1><p>Conheça as áreas de actividade do HijamaMoz e obtenha informação antes de tomar uma decisão.</p></div></div>
+ <div class="section"><div class="container">
+  <div class="grid two">
+   <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1000&q=85" alt="Ventosaterapia"></div><div class="card-body"><h3>Hijamah — ventosaterapia</h3><p>Informação sobre a ventosaterapia seca e húmida, os procedimentos gerais e os cuidados necessários. Qualquer atendimento deve depender de avaliação adequada e ser realizado por profissional devidamente qualificado.</p></div></article>
+   <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=1000&q=85" alt="Materiais de higiene"></div><div class="card-body"><h3>Equipamentos e materiais</h3><p>Informação sobre kits, copos e outros materiais relacionados com a prática. A utilização deve respeitar as instruções do fabricante e as regras de higiene e segurança.</p></div></article>
+   <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1000&q=85" alt="Livros"></div><div class="card-body"><h3>Educação e conhecimento</h3><p>Materiais educativos e conteúdos de apoio à aprendizagem, incluindo recursos de educação islâmica.</p></div></article>
+   <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1000&q=85" alt="Produtos naturais"></div><div class="card-body"><h3>Produtos naturais</h3><p>Consulte os produtos disponíveis, as respectivas características, composição e instruções fornecidas pelo fabricante.</p></div></article>
+  </div>
+ </div></div>
+ <div class="section cream"><div class="container split">
+  <div><div class="eyebrow">Informação importante</div><h2>Higiene e segurança em primeiro lugar.</h2><p class="muted">A Hijamah húmida envolve contacto com sangue e exige precauções rigorosas. Deve ser realizada apenas por profissionais habilitados, com material adequado, técnica asséptica e gestão segura de resíduos.</p>
+   <ul class="checklist"><li>Não partilhar materiais de utilização individual.</li><li>Utilizar material esterilizado ou descartável apropriado.</li><li>Conhecer as contraindicações e os factores de risco.</li><li>Procurar aconselhamento médico quando necessário.</li></ul>
+  </div>
+  <div class="photo"><img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=1000&q=85" alt="Material de protecção e higiene"></div>
+ </div></div>
+ <div class="section"><div class="container"><div class="banner"><div><h2>Tem alguma questão?</h2><p>Contacte-nos para obter informações sobre os serviços.</p></div><a class="btn gold" href="#contactos" onclick="showPage('contactos')">FALE CONNOSCO</a></div></div></div>
+</section>
+
+<section class="page" id="loja">
+ <div class="page-hero"><div class="container"><div class="eyebrow">HijamaMoz</div><h1>Comprar online</h1><p>Produtos, equipamentos e materiais educativos. Consulte a disponibilidade e as condições de encomenda.</p></div></div>
+ <div class="section cream"><div class="container">
+  <div class="section-head"><div class="eyebrow">Catálogo</div><h2>Os nossos produtos</h2><p>Substitua as imagens e os textos de exemplo pelas fotografias, preços e informações reais de cada produto.</p></div>
+  <div class="grid">
+   <article class="card product"><div class="card-img"><div class="placeholder">FOTOGRAFIA DO KIT DE HIJAMAH</div></div><div class="card-body"><span class="tag">Equipamentos</span><h3>Kit de Hijamah</h3><p>Descrição do conteúdo do kit, características e condições de utilização.</p><a class="btn" href="#contactos" onclick="showPage('contactos')">CONSULTAR / ENCOMENDAR</a></div></article>
+   <article class="card product"><div class="card-img"><div class="placeholder">FOTOGRAFIA DO YASSARNAL QURAN</div></div><div class="card-body"><span class="tag">Educação islâmica</span><h3>Yassarnal Quran</h3><p>Material educativo para aprender a reconhecer letras árabes e desenvolver a leitura do Alcorão.</p><a class="btn" href="#contactos" onclick="showPage('contactos')">CONSULTAR / ENCOMENDAR</a></div></article>
+   <article class="card product"><div class="card-img"><div class="placeholder">FOTOGRAFIA DO PRODUTO NATURAL</div></div><div class="card-body"><span class="tag">Produtos naturais</span><h3>Produtos naturais</h3><p>Indique o nome, a composição, a apresentação e as informações fornecidas pelo fabricante.</p><a class="btn" href="#contactos" onclick="showPage('contactos')">CONSULTAR / ENCOMENDAR</a></div></article>
+  </div>
+ </div></div>
+</section>
+
+<section class="page" id="contactos">
+ <div class="page-hero"><div class="container"><div class="eyebrow">Estamos disponíveis</div><h1>Contactos</h1><p>Entre em contacto para obter informações, esclarecer dúvidas ou consultar a disponibilidade dos produtos e serviços.</p></div></div>
+ <div class="section"><div class="container contact-grid">
+  <div><div class="eyebrow">Fale connosco</div><h2>Será um prazer ajudá-lo.</h2><p class="muted">Utilize os contactos abaixo ou envie uma mensagem através do formulário.</p>
+   <div class="contact-item"><strong>Localização</strong><span class="muted">Maputo, Moçambique — inserir endereço completo</span></div>
+   <div class="contact-item"><strong>Telefone / WhatsApp</strong><span class="muted">+258 87 995 3708</span></div>
+   <div class="contact-item"><strong>E-mail</strong><span class="muted">Inserir endereço de e-mail oficial</span></div>
+   <div class="contact-item"><strong>Horário de atendimento</strong><span class="muted">Inserir dias e horários actualizados</span></div>
+  </div>
+  <form id="contactForm">
+   <h3>Enviar uma mensagem</h3>
+   <label for="name">Nome</label><input id="name" name="name" required placeholder="O seu nome">
+   <label for="email">E-mail ou telefone</label><input id="email" name="email" required placeholder="Como podemos responder-lhe?">
+   <label for="subject">Assunto</label><select id="subject" name="subject"><option>Informações sobre Hijamah</option><option>Marcação</option><option>Compra de produtos</option><option>Outra questão</option></select>
+   <label for="message">Mensagem</label><textarea id="message" name="message" required placeholder="Escreva a sua mensagem..."></textarea>
+   <button class="btn" type="submit" style="margin-top:18px;cursor:pointer">ENVIAR MENSAGEM</button>
+   <p class="notice">O formulário abre o WhatsApp com a mensagem preparada. É necessário configurar o número oficial no código antes de publicar.</p>
+  </form>
+ </div></div>
+ <div class="section cream"><div class="container"><div class="section-head"><h2>Onde estamos</h2><p>Insira aqui o mapa incorporado da localização exacta do HijamaMoz, através do Google Maps.</p></div><div class="placeholder" style="height:300px;border-radius:16px">ESPAÇO PARA INCORPORAR O GOOGLE MAPS</div></div></div>
+</section>
+</main>
+
+<footer><div class="container">
+ <div class="footer-grid">
+  <div><div class="brand" style="color:#fff"><span class="brand-mark" style="background:#d0bd8c;color:#173d32">۞</span><span>HIJAMAMOZ<small style="color:#c9d1c9">HIJAMAH · CONHECIMENTO · TRADIÇÃO</small></span></div><p style="margin-top:17px">Informação, serviços e produtos relacionados com a Hijamah, apresentados com responsabilidade e respeito pelos valores islâmicos.</p></div>
+  <div><h3>EXPLORAR</h3><div class="footer-links"><a href="#home" onclick="showPage('home')">Home</a><a href="#sobre" onclick="showPage('sobre')">Sobre nós</a><a href="#servicos" onclick="showPage('servicos')">Serviços</a><a href="#loja" onclick="showPage('loja')">Comprar online</a></div></div>
+  <div><h3>CONTACTOS</h3><div class="footer-links"><a href="#contactos" onclick="showPage('contactos')">Contactos</a><a href="#contactos" onclick="showPage('contactos')">Privacidade</a><a href="#contactos" onclick="showPage('contactos')">Termos e condições</a></div></div>
+ </div>
+ <div class="copyright">© <span id="year"></span> HijamaMoz. Todos os direitos reservados. | O conteúdo deste website tem carácter informativo e não substitui aconselhamento médico.</div>
+</div></footer>
+<a class="float-wa" href="#" id="waFloat" target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+/* CONFIGURAÇÃO: substitua pelo número oficial em formato internacional, apenas dígitos.
+   Exemplo de formato: 258XXXXXXXXX (não inclua +, espaços ou hífen). */
+const WHATSAPP_NUMBER = "258879953708";
+
+function showPage(page){
+ document.querySelectorAll("section.page").forEach(s=>s.classList.toggle("active",s.id===page));
+ document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("active",a.dataset.page===page));
+ document.getElementById("mainNav").classList.remove("open");
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(location.hash !== "#"+page) history.replaceState(null,"","#"+page);
+}
+function toggleMenu(){document.getElementById("mainNav").classList.toggle("open")}
+function waLink(message){
+ return "https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message);
+}
+document.getElementById("waFloat").href=waLink("Olá, gostaria de obter informações sobre o HijamaMoz.");
+document.getElementById("contactForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const n=document.getElementById("name").value.trim();
+ const em=document.getElementById("email").value.trim();
+ const s=document.getElementById("subject").value;
+ const m=document.getElementById("message").value.trim();
+ const text="Mensagem através do website HijamaMoz%0A"+"Nome: "+n+"%0AContacto: "+em+"%0AAssunto: "+s+"%0AMensagem: "+m;
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent("Mensagem através do website HijamaMoz\nNome: "+n+"\nContacto: "+em+"\nAssunto: "+s+"\nMensagem: "+m),"_blank");
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+const initial=location.hash.replace("#","");
+if(["home","sobre","servicos","loja","contactos"].includes(initial)) showPage(initial);
+</script>
+</body>
+</html>
